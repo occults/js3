@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Определение большей цифры</title>
+	 <meta charset="utf-8">
+	  </head>
+	   <body>
+	    <h1>Определение большей цифры трехзначного числа</h1>
+	     <form>
+	      <label>Введите трехзначное число:</label>
+	       <input type="text" name="number"> 
+	       <br> <button type="submit">Определить</button>
+	        </form> <script> 
+	        	if(isset($GET["number"])) { $number = $GET["number"];
+	        	 if(strlen($number) != 3) { echo("<p>Введите трехзначное число!</p>");
+	        	  } else { $firstdigit = substr($number, 0, 1);
+	        	   $seconddigit = substr($number, 1, 1); 
+	        	   $lastdigit = substr($number, 2, 1); 
+	        	   echo("<p>Первая цифра: ".$firstdigit."</p>"); 
+	        	   echo("<p>Вторая цифра: ".$seconddigit."</p>"); 
+	        	   echo("<p>Последняя цифра: ".$lastdigit."</p>"); 
+	        	   if($firstdigit > $lastdigit) { echo("<p>Первая цифра больше последней цифры.</p>");
+	        	    } else { echo("<p>Последняя цифра больше или равна первой цифре.</p>"); 
+	        	} if($firstdigit > $seconddigit) { echo("<p>Первая цифра больше второй цифры.</p>");
+	        	 } else { echo("<p>Вторая цифра больше или равна первой цифре.</p>");
+	        	  } if($seconddigit > $lastdigit) { echo("<p>Вторая цифра больше последней цифры.</p>"); 
+	        	} else { echo("<p>Последняя цифра больше или равна второй цифре.</p>"); 
+	        } } } </script>
+	         </body>
+	          </html>

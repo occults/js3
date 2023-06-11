@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Определение цифр двузначного числа</title>
+</head>
+<body>
+    <form>
+        <label>Введите двузначное число:</label>
+        <input type="number" name="number" min="10" max="99" required><br><br>
+        <button type="submit">Определить</button><br><br>
+    </form>
+
+<script>
+    if (isset($_GET['number'])) {
+        $number = $_GET['number'];
+
+        // Определение цифр числа
+        $first_digit = floor($number / 10);
+        $second_digit = $number % 10;
+
+        // Определение, какая цифра больше
+        if ($first_digit > $second_digit) {
+            echo "Первая цифра больше второй";
+        } elseif ($first_digit < $second_digit) {
+            echo "Вторая цифра больше первой";
+        } else {
+            echo "Цифры равны";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>Проверка числа - равен ли квадрат числа сумме кубов цифр</title> 
+</head> 
+<body>
+ <h1>Проверка числа - равен ли квадрат числа сумме кубов цифр</h1>
+  <form> <label for="number">Введите трехзначное число:</label> 
+  	<input type="number" id="number" name="number" min="100" max="999" required>
+  	 <button type="submit">Проверить</button> 
+  	</form> 
+  	<br> <div id="result"></div>
+  	 <script> const form = document.querySelector('form');
+  	  form.addEventListener('submit', function (event) { event.preventDefault();
+  	   const number = parseInt(form.querySelector('#number').value); 
+  	const digit1 = Math.floor(number / 100); 
+  const digit2 = Math.floor((number - digit1 * 100) / 10); 
+const digit3 = number % 10;
+ const sum = digit1 ** 3 + digit2 ** 3 + digit3 ** 3;
+  const square = number ** 2; 
+const resultElement = document.querySelector('#result');
+ if (sum === square) { resultElement.textContent = Квадрат числа ${number} равен сумме кубов его цифр (${sum}); 
+} else { resultElement.textContent = Квадрат числа ${number} не равен сумме кубов его цифр (${sum}); 
+} });
+ </script>
+  </body> 
+</html>

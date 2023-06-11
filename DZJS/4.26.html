@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+ <html> 
+ <head>
+  <title>Кратность чисел</title>
+   </head> 
+   <body>
+    <script> 
+    let number = prompt("Введите двузначное число:"); 
+let sum = parseInt(number[0]) + parseInt(number[1]); 
+let a = sum % 3 === 0 ? "кратна" : "не кратна"; 
+let b = number % sum === 0 ? "кратна" : "не кратна"; 
+alert(Сумма цифр ${number} равна ${sum}. Она ${a} 3. Число ${number} ${b} своей сумме цифр.);
+ </script> 
+</body> 
+</html>
